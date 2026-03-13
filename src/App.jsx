@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './Components/Header'
 import InputBlock from './Components/InputBlock'
-import ResultBlock from './Components/resultBlock'
+import ResultBlock from './Components/ResultBlock'
 
 function App() {
   const [formData, setFormData] = useState({
