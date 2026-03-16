@@ -1,19 +1,18 @@
-name: React Build
+name: React CI Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Node.js
+      - name: Install Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -24,3 +23,5 @@ jobs:
       - name: Build React App
         run: npm run build
 
+      - name: Run Deploy Script
+        run: bash deploy.sh
